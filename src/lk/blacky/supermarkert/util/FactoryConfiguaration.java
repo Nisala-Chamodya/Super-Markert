@@ -1,7 +1,6 @@
 package lk.blacky.supermarkert.util;
 
 import lk.blacky.supermarkert.entity.Customer;
-
 import lk.blacky.supermarkert.entity.Item;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

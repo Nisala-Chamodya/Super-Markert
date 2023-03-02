@@ -1,3 +1,4 @@
+import lk.blacky.supermarkert.embeded.Name;
 import lk.blacky.supermarkert.entity.Customer;
 import lk.blacky.supermarkert.entity.Item;
 import lk.blacky.supermarkert.util.FactoryConfiguaration;
@@ -7,18 +8,11 @@ import org.hibernate.Transaction;
 public class AppInitializer {
     public static void main(String[] args) {
 
-        Customer customer1 = new Customer();
-        customer1.setId("c001");
-        customer1.setName("Nisala");
-        customer1.setAddress("bandaragama");
-        customer1.setSalary(5000);
+        Name name=new Name("nisala","chamodya","sooriyaarachchi");
+        Customer c1=new Customer("c001",name,"Bandaragma",750000.00);
 
 
-        Customer customer2 = new Customer();
-        customer2.setId("c002");
-        customer2.setName("Tharani");
-        customer2.setAddress("panadura");
-        customer2.setSalary(25000);
+
 
 
 
@@ -42,7 +36,7 @@ public class AppInitializer {
         Transaction transaction = session.beginTransaction();
 
         //customer save
-        //session.save(customer2);
+       session.save(c1);
 
 
         //item save
@@ -65,9 +59,9 @@ public class AppInitializer {
 
 
         //customer delete
-      /*Customer customer=  new Customer();
-      customer.setId("c002");
+        /*Customer customer = session.get(Customer.class, "c001");
         session.delete(customer);*/
+
 
         //item delete
 
